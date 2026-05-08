@@ -6,7 +6,9 @@ from google import genai
 # GEMINI CLIENT
 # =========================
 
-client = genai.Client(api_key="AIzaSyBy_afjxc4DnllDSeU9zlRRqDNtMs2nn3M")
+import os
+
+client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 # =========================
 # FASTAPI APP
