@@ -1,20 +1,13 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from google import genai
-
-# =========================
-# GEMINI CLIENT
-# =========================
-
 import os
 
-client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
-
-# =========================
-# FASTAPI APP
-# =========================
-
 app = FastAPI()
+
+client = genai.Client(
+    api_key=os.getenv("GEMINI_API_KEY")
+)
 
 app.add_middleware(
     CORSMiddleware,
